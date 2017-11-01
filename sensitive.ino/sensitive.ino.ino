@@ -43,6 +43,23 @@ void tcaselect(uint8_t i) {
  *  clear는 원래 객체에 write 혹은 print된 내용을 지우기 위해 쓰이는 함수이지만 
  *  여기서는 변수명으로 지정하였습니다.
  */
+/*
+void color(){
+  if ( red ) bt.print("R");
+  if ( pink ) bt.print("P");
+  if ( orange ) bt.print("O");
+  if ( yellow ) bt.print("Y");
+  if ( green ) bt.print("G");
+  if ( blue ) bt.print("B");
+  if ( magenta ) bt.print("M");
+  if ( violet ) bt.print("V");
+  
+}
+*/
+void color()
+{
+  
+}
 void datatorgb() 
 {
    sum = red;
