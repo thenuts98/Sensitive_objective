@@ -62,25 +62,30 @@ void color(int r, int g, int b)
   if(r > 250 && 140 < g < 180 && 80 < b < 110) 
   {
     Serial.println("O");
-    str[count] = 'O';
-    count += 1;
+    str[count] = 'O'
   }
   else if (80 < r < 90 && 80 < g < 90 && 90 < b < 100 )
   {
     Serial.println("V");
     str[count] = 'V';
-    count += 1;
   }
+  count += 1;
   if (count == 3 )
   {
     for (int i = 0; i < 3; i++)
     {
       bt.write(str[i]);
       Serial.println(str[i]);
+      str[i] = 0;
     }
     count = 0;
   }
 }
+/* 문자열 str의 count 위치에 색 판별의 결과값을 대입합니다.
+ *  색 판별이 한번 이루어진 이후 count 값이 1 증가합니다.
+ * count가 3이되었을 때, 즉 색이 3번 읽혔을 때 문자열 str을 블루투스에 출력합니다.
+ * 출력 후 문자열 str을 초기화합니다.
+ */
 void datatorgb() 
 {
    sum = red;
