@@ -4,7 +4,8 @@
 #define TCAADDR 0x70 // 멀티플렉서가 0x70의 주소를 가집니다. 
 
 byte gammatable[256];
-
+char str[3];
+int count = 0;
  uint16_t clear, red, green, blue;
 
  float r, g, b;
@@ -56,9 +57,29 @@ void color(){
   
 }
 */
-void color()
+void color(int r, int g, int b)
 {
-  
+  if(r > 250 && 140 < g < 180 && 80 < b < 110) 
+  {
+    Serial.println("O");
+    str[count] = 'O';
+    count += 1;
+  }
+  else if (80 < r < 90 && 80 < g < 90 && 90 < b < 100 )
+  {
+    Serial.println("V");
+    str[count] = 'V';
+    count += 1;
+  }
+  if (count == 3 )
+  {
+    for (int i = 0; i < 3; i++)
+    {
+      bt.write(str[i]);
+      Serial.println(str[i]);
+    }
+    count = 0;
+  }
 }
 void datatorgb() 
 {
@@ -85,7 +106,8 @@ void datatorgb()
   Serial.print("\t");
   Serial.print(b);
   Serial.println();
-  Serial.println(clear);
+  color(r, g, b);
+
   
 }
 
