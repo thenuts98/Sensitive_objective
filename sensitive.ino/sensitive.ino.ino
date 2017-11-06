@@ -158,12 +158,15 @@ void setup(void) {
 void loop(void) {
 
   tcaselect(2);
+  Serial.println("1번 센서");
   tcs1.getRawData(&red, &green, &blue, &clear);
   datatorgb();
    tcaselect(3);
+     Serial.println("2번 센서");
   tcs2.getRawData(&red, &green, &blue, &clear);
   datatorgb();
   tcaselect(4);
+    Serial.println("3번 센서");
   tcs3.getRawData(&red, &green, &blue, &clear);
   datatorgb();
 
