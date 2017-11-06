@@ -59,23 +59,28 @@ void color(){
 */
 void color(int r, int g, int b)
 {
-  if(r > 250 && 140 < g < 180 && 80 < b < 110) 
+  if (150 < r &&  r < 170 && 40 < g && g < 70 && 40 < b && b < 50)
+  {
+    Serial.println("R");
+    str[count] = 'R';
+  }
+ if(r > 250 && 140 < g && g < 180 && 80 < b && b < 110) 
   {
     Serial.println("O");
-    str[count] = 'O'
+    str[count] = 'O';
   }
-  else if (80 < r < 90 && 80 < g < 90 && 90 < b < 100 )
+if (80 < r && r < 95 && 80 < g  && g < 90 && 90 < b && b < 110 )
   {
     Serial.println("V");
     str[count] = 'V';
   }
+
   count += 1;
   if (count == 3 )
   {
     for (int i = 0; i < 3; i++)
     {
       bt.write(str[i]);
-      Serial.println(str[i]);
       str[i] = 0;
     }
     count = 0;
