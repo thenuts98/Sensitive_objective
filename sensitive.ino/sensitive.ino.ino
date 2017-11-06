@@ -57,7 +57,7 @@ void color(){
   
 }
 */
-void color(int r, int g, int b)
+void color()
 {
   if (150 < r &&  r < 170 && 40 < g && g < 70 && 40 < b && b < 50)
   {
@@ -74,7 +74,27 @@ if (80 < r && r < 95 && 80 < g  && g < 90 && 90 < b && b < 110 )
     Serial.println("V");
     str[count] = 'V';
   }
-
+if (140 < r && r <160 && 230 < g && 100 < b && b < 120)
+{
+     Serial.println("P");
+     str[count]='P';
+}
+// 실제로는 연두색입니다. 핑크색 우드락이 없었어요....
+if (r >250 && g>250 && 140 < b && b < 165)
+{
+    Serial.println("Y");
+    str[count]='Y';
+}
+if (70 < r && r < 90 && 170 < g && g < 210 && 95 < b && b < 130)
+{
+     Serial.println("G");
+     str[count]='G';
+}
+if (50 < r && r < 70 && 80 < g && g < 100 && 95 < b && b < 115 )
+{
+     Serial.println("B");
+     str[count]='B';
+}
   count += 1;
   if (count == 3 )
   {
@@ -115,8 +135,10 @@ void datatorgb()
   Serial.print(g);
   Serial.print("\t");
   Serial.print(b);
+  Serial.print("\t");
+  Serial.print(clear);
   Serial.println();
-  color(r, g, b);
+  color();
 
   
 }
