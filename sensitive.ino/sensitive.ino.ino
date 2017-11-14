@@ -17,11 +17,11 @@ int count = 0;
    Connect GROUND to common ground */
    
 
-Adafruit_TCS34725 tcs1 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
+Adafruit_TCS34725 tcs1 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_1X);
 
-Adafruit_TCS34725 tcs2 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
+Adafruit_TCS34725 tcs2 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_1X);
 
-Adafruit_TCS34725 tcs3 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_700MS, TCS34725_GAIN_1X);
+Adafruit_TCS34725 tcs3 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_1X);
 /*  multiplexer는 0부터 7까지의 8개의 센서를 연결할 수 있습니다.
  *  tcaselect 함수는 입력한 숫자에 연결된 센서로 연결을 변경해줍니다.
  *  tcs37425는 헤더에 센서 주소가 내장되어 있어 건드리기가 귀찮아 본 함수로 대체합니다.
